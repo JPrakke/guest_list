@@ -15,7 +15,7 @@ public class Main {
             System.out.println("4 - Quit Program");
             while (true) {
                 System.out.println("\n Make a Selection: ");
-                int optionSelect = sc.nextInt();
+                int optionSelect = Integer.parseInt(sc.nextLine());
                 if (!selector(optionSelect)) {
                     break;
                 }
@@ -28,7 +28,7 @@ public class Main {
                 allGuests(guestList);
                 return false;
             case 2:
-                System.out.println("you selected option 2");
+                addGuests(guestList);
                 return false;
             case 3:
                 System.out.println("you selected option 3");
@@ -46,5 +46,15 @@ public class Main {
         for(String name : arr){
             System.out.println(name);
         }
+    }
+    public static void addGuests(String[] arr){
+        for(int i = 0; i<arr.length; i++){
+            if(arr[i] == null){
+                System.out.println("Please enter the guests information: ");
+                arr[i] = sc.nextLine();
+                break;
+            }
+        }
+
     }
 }
