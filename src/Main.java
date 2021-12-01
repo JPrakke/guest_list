@@ -8,15 +8,7 @@ public class Main {
         run();
     }
     public static void run(){
-        guestList[0] = "Carl Sagan";
-        guestList[1] = "Neil Degrasse Tyson";
-        guestList[2] = "Bill Nye";
-        guestList[3] = "Nelson Mandela";
-        guestList[4] = "Stephen Hawking";
-        guestList[5] = "Anita Curey";
-        guestList[6] = "Grace Hopper";
-        guestList[7] = "Price William";
-        guestList[8] = "Prince Harry";
+        insertTestNames();
         do {
             allGuests();
             displayMenu();
@@ -101,5 +93,16 @@ public class Main {
             }
         }
         guestList = tempArr;
+    }
+    public static void insertTestNames(){
+        guestList[0] = "Carl Sagan";
+        guestList[1] = "Neil Degrasse Tyson";
+        guestList[2] = "Bill Nye";
+        guestList[3] = "Nelson Mandela";
+        guestList[4] = "Stephen Hawking";
+        guestList[5] = "Anita Curey";
+        guestList[6] = "Grace Hopper";
+        guestList[7] = "Price William";
+        guestList[8] = "Prince Harry";
     }
 }
