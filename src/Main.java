@@ -59,10 +59,15 @@ public class Main {
     public static void allGuests(){
         System.out.println("============================");
         System.out.println(" -- Guests --\n");
+        boolean isEmpty = true;
         for(int i = 0;i<guestList.length; i++){
             if(guestList[i] != null){
                 System.out.println((i+1) + ". "  + guestList[i]);
+                isEmpty = false;
             }
+        }
+        if(isEmpty){
+            System.out.println("Guest list is empty.");
         }
     }
     public static void addGuests(){
