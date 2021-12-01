@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
-    static String[] guestList = new String[10];
+    static String[] guests = new String[10];
     static boolean continueScript = true;
     public static void main(String[] args) {
         run();
@@ -52,9 +52,9 @@ public class Main {
         System.out.println("============================");
         System.out.println(" -- Guests --\n");
         boolean isEmpty = true;
-        for(int i = 0;i<guestList.length; i++){
-            if(guestList[i] != null){
-                System.out.println((i+1) + ". "  + guestList[i]);
+        for(int i = 0;i<guests.length; i++){
+            if(guests[i] != null){
+                System.out.println((i+1) + ". "  + guests[i]);
                 isEmpty = false;
             }
         }
@@ -63,46 +63,45 @@ public class Main {
         }
     }
     public static void addGuests(){
-        for(int i = 0; i<guestList.length; i++){
-            if(guestList[i] == null){
+        for(int i = 0; i<guests.length; i++){
+            if(guests[i] == null){
                 System.out.println("Please enter the guests information: ");
-                guestList[i] = sc.nextLine();
+                guests[i] = sc.nextLine();
                 break;
             }
         }
     }
     public static void removeGuests(){
-        System.out.println("Please enter the guest you would like to remove: ");
-        String input = sc.nextLine();
-        for (int i = 0;i<guestList.length; i++){
-            if(guestList[i] != null && guestList[i].toLowerCase().equals(input.toLowerCase())){
-                guestList[i] = null;
-                System.out.printf("%s has been removed.", input);
-                break;
-            }
+        System.out.println("Please enter the number of the guest you would like to remove: ");
+        int num = Integer.parseInt(sc.nextLine());
+        if (num >= 1 && num <= guests.length && guests[num-1] != null){
+            System.out.printf("Guest: %s was removed.\n", guests[num-1]);
+            guests[num-1]= null;
+            cleanArray();
+        }else{
+            System.out.println("\nError: There is no guest with that number.");
         }
-        cleanArray();
     }
     public static void cleanArray(){
-        String[] tempArr = new String[guestList.length];
+        String[] tempArr = new String[guests.length];
         int tempLoc = 0;
-        for(int i = 0; i <guestList.length; i++){
-            if(guestList[i] != null){
-                tempArr[tempLoc] = guestList[i];
+        for(int i = 0; i <guests.length; i++){
+            if(guests[i] != null){
+                tempArr[tempLoc] = guests[i];
                 tempLoc ++;
             }
         }
-        guestList = tempArr;
+        guests = tempArr;
     }
     public static void insertTestNames(){
-        guestList[0] = "Carl Sagan";
-        guestList[1] = "Neil Degrasse Tyson";
-        guestList[2] = "Bill Nye";
-        guestList[3] = "Nelson Mandela";
-        guestList[4] = "Stephen Hawking";
-        guestList[5] = "Anita Curey";
-        guestList[6] = "Grace Hopper";
-        guestList[7] = "Price William";
-        guestList[8] = "Prince Harry";
+        guests[0] = "Carl Sagan";
+        guests[1] = "Neil Degrasse Tyson";
+        guests[2] = "Bill Nye";
+        guests[3] = "Nelson Mandela";
+        guests[4] = "Stephen Hawking";
+        guests[5] = "Anita Curey";
+        guests[6] = "Grace Hopper";
+        guests[7] = "Price William";
+        guests[8] = "Prince Harry";
     }
 }
