@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
-    static String[] guestList = new String[1000];
+    static String[] guestList = new String[10];
     static boolean continueScript = true;
     public static void main(String[] args) {
         run();
@@ -53,9 +53,7 @@ public class Main {
     }
     public static void allGuests(String[] arr){
         for(String name : arr){
-            if(name == null){
-                System.out.println("--");
-            }else System.out.println(name);
+            System.out.println(name == null ? "--" : name);
         }
     }
     public static void addGuests(String[] arr){
