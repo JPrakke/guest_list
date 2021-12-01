@@ -21,13 +21,7 @@ public class Main {
         do {
             allGuests(guestList);
             displayMenu();
-            while (true) {
-                System.out.println("\n Make a Selection: ");
-                int optionSelect = Integer.parseInt(sc.nextLine());
-                if (!selector(optionSelect)) {
-                    break;
-                }
-            }
+            getOption();
         } while (continueScript);
     }
     public static void displayMenu(){
@@ -36,6 +30,15 @@ public class Main {
         System.out.println("1 - Add Guests");
         System.out.println("2 - Remove Guests");
         System.out.println("3 - Quit Program\n");
+    }
+    public static void getOption(){
+        while (true) {
+            System.out.println("\n Make a Selection: ");
+            int optionSelect = Integer.parseInt(sc.nextLine());
+            if (!selector(optionSelect)) {
+                break;
+            }
+        }
     }
     public static boolean selector(int input){
         switch (input){
