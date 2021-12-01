@@ -57,11 +57,12 @@ public class Main {
         }
     }
     public static void allGuests(){
-//        refactored to a turney statement
         System.out.println("============================");
         System.out.println(" -- Guests --\n");
         for(int i = 0;i<guestList.length; i++){
-            System.out.println((i+1) + ". "  + (guestList[i] == null ? "--" : guestList[i]));
+            if(guestList[i] != null){
+                System.out.println((i+1) + ". "  + guestList[i]);
+            }
         }
     }
     public static void addGuests(){
