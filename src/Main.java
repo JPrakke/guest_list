@@ -19,12 +19,8 @@ public class Main {
         guestList[7] = "Price William";
         guestList[8] = "Prince Harry";
         do {
-            System.out.println("============================");
-            System.out.println(" -- Menu --\n");
-            System.out.println("1 - Add Guests");
-            System.out.println("2 - Remove Guests");
-            System.out.println("3 - Quit Program\n");
             allGuests(guestList);
+            displayMenu();
             while (true) {
                 System.out.println("\n Make a Selection: ");
                 int optionSelect = Integer.parseInt(sc.nextLine());
@@ -33,6 +29,13 @@ public class Main {
                 }
             }
         } while (continueScript);
+    }
+    public static void displayMenu(){
+        System.out.println("============================");
+        System.out.println(" -- Menu --\n");
+        System.out.println("1 - Add Guests");
+        System.out.println("2 - Remove Guests");
+        System.out.println("3 - Quit Program\n");
     }
     public static boolean selector(int input){
         switch (input){
