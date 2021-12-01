@@ -60,8 +60,8 @@ public class Main {
 //        refactored to a turney statement
         System.out.println("============================");
         System.out.println(" -- Guests --\n");
-        for(String name : guestList){
-            System.out.println(name == null ? "--" : name);
+        for(int i = 0;i<guestList.length; i++){
+            System.out.println((i+1) + ". "  + (guestList[i] == null ? "--" : guestList[i]));
         }
     }
     public static void addGuests(){
