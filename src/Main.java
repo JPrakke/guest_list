@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -19,7 +18,7 @@ public class Main {
         guestList[7] = "Price William";
         guestList[8] = "Prince Harry";
         do {
-            allGuests(guestList);
+            allGuests();
             displayMenu();
             getOption();
         } while (continueScript);
@@ -43,10 +42,10 @@ public class Main {
     public static boolean selector(int input){
         switch (input){
             case 1:
-                addGuests(guestList);
+                addGuests();
                 return false;
             case 2:
-                removeGuests(guestList);
+                removeGuests();
                 return false;
             case 3:
                 System.out.println("Goodbye...");
@@ -57,29 +56,29 @@ public class Main {
                  return true;
         }
     }
-    public static void allGuests(String[] arr){
+    public static void allGuests(){
 //        refactored to a turney statement
         System.out.println("============================");
         System.out.println(" -- Guests --\n");
-        for(String name : arr){
+        for(String name : guestList){
             System.out.println(name == null ? "--" : name);
         }
     }
-    public static void addGuests(String[] arr){
-        for(int i = 0; i<arr.length; i++){
-            if(arr[i] == null){
+    public static void addGuests(){
+        for(int i = 0; i<guestList.length; i++){
+            if(guestList[i] == null){
                 System.out.println("Please enter the guests information: ");
-                arr[i] = sc.nextLine();
+                guestList[i] = sc.nextLine();
                 break;
             }
         }
     }
-    public static void removeGuests(String[] arr){
+    public static void removeGuests(){
         System.out.println("Please enter the guest you would like to remove: ");
         String input = sc.nextLine();
-        for (int i = 0;i<arr.length; i++){
-            if(arr[i] != null && arr[i].toLowerCase().equals(input.toLowerCase())){
-                arr[i] = null;
+        for (int i = 0;i<guestList.length; i++){
+            if(guestList[i] != null && guestList[i].toLowerCase().equals(input.toLowerCase())){
+                guestList[i] = null;
                 System.out.printf("%s has been removed.", input);
                 break;
             }
