@@ -53,9 +53,9 @@ public class Main {
     }
     public static void allGuests(String[] arr){
         for(String name : arr){
-            if(name != null){
-                System.out.println(name);
-            }
+            if(name == null){
+                System.out.println("--");
+            }else System.out.println(name);
         }
     }
     public static void addGuests(String[] arr){
