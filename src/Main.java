@@ -83,5 +83,17 @@ public class Main {
                 break;
             }
         }
+        cleanArray();
+    }
+    public static void cleanArray(){
+        String[] tempArr = new String[guestList.length];
+        int tempLoc = 0;
+        for(int i = 0; i <guestList.length; i++){
+            if(guestList[i] != null){
+                tempArr[tempLoc] = guestList[i];
+                tempLoc ++;
+            }
+        }
+        guestList = tempArr;
     }
 }
