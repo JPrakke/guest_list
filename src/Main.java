@@ -19,6 +19,7 @@ public class Main {
         System.out.println("============================");
         System.out.println(" -- Menu --\n");
         System.out.println("1 - Add Guests");
+        System.out.println("2 - Insert Guests");
         System.out.println("2 - Rename Guests");
         System.out.println("3 - Remove Guests");
         System.out.println("4 - Quit Program\n");
@@ -38,12 +39,15 @@ public class Main {
                 addGuests();
                 return false;
             case 2:
-                renameGuests();
+                insertGuests();
                 return false;
             case 3:
-                removeGuests();
+                renameGuests();
                 return false;
             case 4:
+                removeGuests();
+                return false;
+            case 5:
                 System.out.println("Goodbye...");
                 continueScript = false;
                 return false;
@@ -74,6 +78,22 @@ public class Main {
                 break;
             }
         }
+    }
+    public static void insertGuests(){
+        System.out.println("Enter the number where you want the new guest to be: ");
+        int num = Integer.parseInt(sc.nextLine());
+        if (num >= 1 && num <= guests.length && guests[num-1] != null){
+            System.out.println("What is the new name of the guest?");
+            String newName = sc.nextLine();
+
+            for(int i = guests.length-1; i>num-1; i--){
+                guests[i]=guests[i-1];
+            }
+            guests[num-1] = newName;
+        }else{
+            System.out.println("\nError: There is no guest with that number.");
+        }
+
     }
     public static void renameGuests(){
         System.out.println("Enter the number of a guest to rename: ");
